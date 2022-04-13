@@ -1,21 +1,36 @@
-import SearchPage from '../pageObjects/searchPage'
+import TodoPage from '../pageObjects/todoPage'
 
-const searchPage = new SearchPage()
+const todoPage = new TodoPage()
 
 Given('Application is running',()=>{
-    searchPage.navigateToURL()
+    todoPage.navigateToURL();
 })
 
-When('I select search for the Character {string}',(charName)=>{
-    // search with the character name provided in feature file
-    searchPage.characterSearch(charName)
+When('I enter the Todo Content {string}',(todoContent)=>{
+    // Enter the Todo Cnntent provided in feature file
+    todoPage.enterContentValue(todoContent);
 })
 
-Then('I should be able to see details',(datatable)=> {
+When('I enter date {string}',(todoDate)=>{
+    // Enter the date provided in feature file
+    todoPage.enterDateValue(todoDate);
+})
+
+And('I click on Create Todo button',()=>{
+    todoPage.clickCreateButton();
+})
+
+Then('Create Todo button should not be active',()=>{
+    // verifying Create todo button is disabled
+    cy.createTodoButton().should('be.disabled');
+})
+
+Then('I should be able to see the Todo in the list',(datatable)=> {
+
     datatable.hashes().forEach(element =>{
         //comparing character name given in the feature file with the character name searched on the application
-        cy.get('body > app-root > div > div > div > div > div > div > app-character > div > div > h6').invoke('text').then((charName)=> {
-            expect(charName).to.be.eq(element.name)
+        cy.get('/html/body/my-app/div/div[2]/table/tbody/tr[1]/td[1]').invoke('text').then((contentDes)=> {
+            expect(contentDes).to.be.eq(element.Todo)
         })
 
         //comparing attributes given in the feature file with the displayed lable on the application
@@ -39,9 +54,7 @@ When('I clear the search form',()=>{
     searchPage.clearSearchForm()
 })
 
-And('I click again on Search button',()=>{
-    searchPage.clickSearchButton()
-})
+
 
 Then('I should be able to see no results',()=>{
     // verifying the "Not Found." lable on the screen after the search

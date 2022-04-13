@@ -1,35 +1,42 @@
-// ***** This class contains all the supporting functions and objects required to operate on Search page ****
+// ***** This class contains all the supporting functions and objects required to operate on Create Todo page ****
 
-class SearchPage{
+class TodoPage{
     
     navigateToURL() // function to navigate to application URL
     {
-        cy.visit('http://localhost:4200/')
-    }
-    clickSearchButton() // function to click on Search button
-    {
-        const button = cy.get('[type="submit"]')
-        button.click()
-        cy.wait(2000)
+        cy.visit('http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/');
     }
 
-    selectPeopleRadioButton() // function to click on People radio button
+    createTodoButton()
     {
-        const radioButton = cy.get('#people')
-        radioButton.click()
+        const createButton = cy.get('[type="submit"]');
+        return createButton;
     }
 
-    selectPlanetRadioButton() // function to click on Planet radio button
+    clickCreateButton() // function to click on Create todo button
     {
-        const radioButton = cy.get('#planets')
-        radioButton.click()
+        createTodoButton().click();
+        cy.wait(2000);
     }
 
-    enterValueToSearch(value)  // function to enter value in Search Form
+    enterContentValue(value)  // function to enter value in Content Field
     {
-        const searchText = cy.get('#query')
-        searchText.clear()
-        searchText.type(value)
+        const content = cy.get('[id="content"]')
+        content.clear()
+        content.type(value)
+    }
+
+    enterDateValue(value)  // function to enter value in Content Field
+    {
+        const date = cy.get('[id="mat-input-1"]')
+        date.clear()
+        date.type(value)
+    }
+
+    compareTodoListData()
+    {
+        const todoTable = cy.get('//tbody[@role="rowgroup"]');
+        todoTable.contains
     }
 
     searchPeopleWithEnter(value)  // function to search people by pressing "Enter"
@@ -68,4 +75,4 @@ class SearchPage{
         return this
     }
 }
-export default SearchPage
+export default TodoPage
