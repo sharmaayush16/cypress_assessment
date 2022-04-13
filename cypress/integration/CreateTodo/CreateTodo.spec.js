@@ -8,7 +8,6 @@ Given('Application is running',()=>{
 
 When('I enter the Todo Content {string}',(todoContent)=>{
     // Enter the Todo Cnntent provided in feature file
-    console.log(todoContent.lenght);
     todoPage.enterContentValue(todoContent);
 })
 
@@ -58,7 +57,14 @@ Then('I should be able to see the Todo in the list',(datatable)=> {
 
 Then('Todo should not be added to the list',()=> {
     
-    cy.get('body > my-app > div > div.column-three-quarter > table > tbody > tr').should('not.exists');
+    cy.get('body > my-app > div > div.column-three-quarter > table > tbody').should('have.text', '');
+    //cy.get('body > my-app > div > div.column-three-quarter > table > tbody').children().should('have.length', 0);
+})
+
+Then('Todo should be added to the list',()=> {
+    
+    cy.get('body > my-app > div > div.column-three-quarter > table > tbody').contains('Todo_Item_1');
+    //cy.get('body > my-app > div > div.column-three-quarter > table > tbody').children().should('have.length', 0);
 })
 
 When('I clear the search form',()=>{

@@ -13,34 +13,6 @@ class TodoPage{
         return createButton;
     }
 
-    clickCreateButton() // function to click on Create todo button
-    {
-        const createButton = cy.get('[type="submit"]');
-        createButton.click();
-        cy.wait(2000);
-    }
-
-    enterContentValue(value)  // function to enter value in Content Field
-    {
-        const content = cy.get('[id="content"]')
-        content.clear()
-        content.type(value)
-    }
-
-    enterDateValue(value)  // function to enter value in Content Field
-    {
-        const date = cy.get('[id="mat-input-1"]')
-        date.clear()
-        date.type(value)
-        return this;
-    }
-
-    compareTodoListData()
-    {
-        const todoTable = cy.get('//tbody[@role="rowgroup"]');
-        todoTable.contains
-    }
-
     createdDate()
     {
         var today = new Date();
@@ -49,6 +21,32 @@ class TodoPage{
         var yyyy = today.toLocaleDateString("en-US", { year: 'numeric' });
         today = mm + ' ' + dd + ', ' + yyyy;
         return today;
+    }
+
+    pastDate()
+    {
+        var date = new Date();
+        date ;
+        date.setDate(date.getDate() - 1);
+        date ;
+        var dd = date.toLocaleDateString("en-US", { day: 'numeric' });
+        var mm = date.toLocaleDateString("en-US", { month: 'short' });
+        var yyyy = date.toLocaleDateString("en-US", { year: 'numeric' });
+        var yesterday = mm + ' ' + dd + ', ' + yyyy;
+        return yesterday;
+    }
+
+    futureDate()
+    {
+        var date = new Date();
+        date ;
+        date.setDate(date.getDate() + 367);
+        date ;
+        var dd = date.toLocaleDateString("en-US", { day: 'numeric' });
+        var mm = date.toLocaleDateString("en-US", { month: 'short' });
+        var yyyy = date.toLocaleDateString("en-US", { year: 'numeric' });
+        var futureDate = mm + ' ' + dd + ', ' + yyyy;
+        return futureDate;
     }
 
     todoDate(date)
@@ -61,6 +59,45 @@ class TodoPage{
         todoDate = dateArr2[1]+' '+dateArr2[2]+', '+dateArr2[3];
         return todoDate;
     }
+
+    clickCreateButton() // function to click on Create todo button
+    {
+        const createButton = cy.get('[type="submit"]');
+        createButton.click();
+        cy.wait(2000);
+    }
+
+    enterContentValue(value)  // function to enter value in Content Field
+    {
+        const content = cy.get('[id="content"]')
+        content.clear()
+        content.type(value)
+        return this;
+    }
+
+    enterDateValue(value)  // function to enter value in Content Field
+    {
+        const date = cy.get('[id="mat-input-1"]')
+        date.clear()
+        if (value === 'Past'){
+            var dateToEnter = pastDate();
+        } 
+        else if (value === 'Future') {
+            var dateToEnter = futureDate();
+        }
+        else {
+            var dateToEnter = value; 
+        }
+        date.type(dateToEnter);
+        return this;
+    }
+
+    compareTodoListData()
+    {
+        const todoTable = cy.get('//tbody[@role="rowgroup"]');
+        todoTable.contains
+    }
+
 
     searchPeopleWithEnter(value)  // function to search people by pressing "Enter"
     {
