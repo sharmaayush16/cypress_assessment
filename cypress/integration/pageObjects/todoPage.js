@@ -15,7 +15,8 @@ class TodoPage{
 
     clickCreateButton() // function to click on Create todo button
     {
-        createTodoButton().click();
+        const createButton = cy.get('[type="submit"]');
+        createButton.click();
         cy.wait(2000);
     }
 
@@ -31,12 +32,34 @@ class TodoPage{
         const date = cy.get('[id="mat-input-1"]')
         date.clear()
         date.type(value)
+        return this;
     }
 
     compareTodoListData()
     {
         const todoTable = cy.get('//tbody[@role="rowgroup"]');
         todoTable.contains
+    }
+
+    createdDate()
+    {
+        var today = new Date();
+        var dd = today.toLocaleDateString("en-US", { day: 'numeric' });
+        var mm = today.toLocaleDateString("en-US", { month: 'short' });
+        var yyyy = today.toLocaleDateString("en-US", { year: 'numeric' });
+        today = mm + ' ' + dd + ', ' + yyyy;
+        return today;
+    }
+
+    todoDate(date)
+    {
+        const dateArr = date.split('/');
+        let todoDatetemp = dateArr[2]+'-'+dateArr[0]+'-'+dateArr[1];
+        var mydate = new Date(todoDatetemp);
+        let todoDate = mydate.toDateString();
+        const dateArr2 = todoDate.split(' ');
+        todoDate = dateArr2[1]+' '+dateArr2[2]+', '+dateArr2[3];
+        return todoDate;
     }
 
     searchPeopleWithEnter(value)  // function to search people by pressing "Enter"
