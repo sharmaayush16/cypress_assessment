@@ -67,3 +67,9 @@ Feature: Verify the Create Todo functionality
         And  I enter the date "15/15/2022"
         And  I click on Create Todo button
         Then Todo should not be added to the list
+    
+    Scenario: Verify Create Todo button is not avtive when the the form is invalid
+        Given Application is running
+        When I enter the Todo Content "Todo_Item_1"
+        And  I enter the date "15/15/2022"
+        Then Create Todo button should be inactive

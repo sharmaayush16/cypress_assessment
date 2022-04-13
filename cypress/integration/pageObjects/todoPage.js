@@ -80,10 +80,10 @@ class TodoPage{
         const date = cy.get('[id="mat-input-1"]')
         date.clear()
         if (value === 'Past'){
-            var dateToEnter = pastDate();
+            var dateToEnter = this.pastDate();
         } 
         else if (value === 'Future') {
-            var dateToEnter = futureDate();
+            var dateToEnter = this.futureDate();
         }
         else {
             var dateToEnter = value; 

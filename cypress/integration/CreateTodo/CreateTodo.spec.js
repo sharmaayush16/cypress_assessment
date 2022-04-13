@@ -45,6 +45,12 @@ Then('Todo should not be added to the list',()=> {
     //cy.get('body > my-app > div > div.column-three-quarter > table > tbody').children().should('have.length', 0);
 })
 
+Then('Create Todo button should be inactive',()=> {
+    
+    cy.get('[type="submit"]').not('.active');
+    //cy.get('body > my-app > div > div.column-three-quarter > table > tbody').children().should('have.length', 0);
+})
+
 Then('Todo should be added to the list',()=> {
     
     cy.get('body > my-app > div > div.column-three-quarter > table > tbody').contains('Todo_Item_1');
