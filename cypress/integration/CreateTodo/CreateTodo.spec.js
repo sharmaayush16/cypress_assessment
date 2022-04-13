@@ -30,28 +30,12 @@ Then('I should be able to see the Todo in the list',(datatable)=> {
     const currentDate = todoPage.createdDate();
     datatable.hashes().forEach(element =>{
         //comparing Todo content and due Date given in the feature file with the list visible on the application
-        //body > my-app > div > div.column-three-quarter > table > tbody > tr:nth-child(1)
         const todoDate = todoPage.todoDate(element.dueDate);
         cy.get('body > my-app > div > div.column-three-quarter > table > tbody > tr').then((items)=> {
             expect(items[0]).to.contain.text(element.todo);
             expect(items[0]).to.contain.text(currentDate);
             expect(items[0]).to.contain.text(todoDate);
         })
-
-        //comparing attributes given in the feature file with the displayed lable on the application
-        /*cy.get('[class="col-sm-2"]').then((items)=> {
-            expect(items[0]).to.contain.text('Gender:')
-            expect(items[1]).to.contain.text('Birth year:')
-            expect(items[2]).to.contain.text('Eye color:')
-            expect(items[3]).to.contain.text('Skin color:')
-        })
-         //comparing attributes given in the feature file with the searched results on the application
-        cy.get('[class="col-sm-10"]').then((items)=> {
-            expect(items[0]).to.contain.text(element.gender)
-            expect(items[1]).to.contain.text(element.birthyear)
-            expect(items[2]).to.contain.text(element.eyecolor)
-            expect(items[3]).to.contain.text(element.skincolor)
-        })*/
     })
 })
 

@@ -98,41 +98,39 @@ class TodoPage{
         todoTable.contains
     }
 
-
-    searchPeopleWithEnter(value)  // function to search people by pressing "Enter"
+    clickOnOprtionSelector()
     {
-        this.selectPeopleRadioButton()
-        this.enterValueToSearch(value)
-        cy.get('#query').type('{enter}')
+        const optionSelector = cy.get('body > my-app > div > div.column-three-quarter > table > tbody > tr:nth-child(1) > td.mat-cell.cdk-cell.align-right.cdk-column-actions.mat-column-actions.ng-star-inserted > button > span > mat-icon');
+        optionSelector.click();
+        return this;
     }
-
-    searchPlanetWithEnter(value)  // function to search planets by pressing "Enter"
+    clickonArchive()
     {
-        this.selectPlanetRadioButton()
-        this.enterValueToSearch(value)
-        cy.get('#query').type('{enter}')
-    }
-
-    clearSearchForm()  // function to clear Search form
-    {
-        const searchText = cy.get('#query')
-        searchText.clear()
-    }
-    
-    planetSearch(value)  // function to search planet
-    {
-        this.selectPlanetRadioButton()
-        this.enterValueToSearch(value)
-        this.clickSearchButton()
-        return this
+        this.clickOnOprtionSelector();
+        const archiveButton = cy.get('div > button:nth-child(1) > mat-icon');
+        archiveButton.click();
+        return this;
     }
 
-    characterSearch(value)  // function to search people
-    {   
-        this.selectPeopleRadioButton()
-        this.enterValueToSearch(value)
-        this.clickSearchButton()
-        return this
+    clickonDelete()
+    {
+        this.clickOnOprtionSelector();
+        const deleteButton = cy.get('div > button:nth-child(2)');
+        deleteButton.click();
+        return this;
     }
+
+    selectDoneCheckBox()
+    {
+        cy.get('mat-checkbox').first().click();
+
+    }
+
+    clickOnClear()
+    {
+        const clearButton = cy.get('div.column-three-quarter > footer > button');
+        clearButton.click();
+    }
+
 }
 export default TodoPage
