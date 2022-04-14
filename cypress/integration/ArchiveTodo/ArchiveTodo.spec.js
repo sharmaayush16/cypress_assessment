@@ -20,7 +20,11 @@ When ('I click on Archive button',() =>{
 })
 
 Then ('The Todo Item must be removed from the list',() =>{
-    cy.get('body > my-app > div > div.column-three-quarter > table > tbody').should('not.have.text', 'B_Todo_Item');
+    //cy.get('div.column-three-quarter > table > tbody > tr:nth-child(1) > td.mat-cell.cdk-cell.cdk-column-content.mat-column-content.ng-star-inserted').should('not.have.text', 'B_Todo_Item');
+
+    cy.get('div.column-three-quarter > table > tbody > tr:nth-child(1) > td.mat-cell.cdk-cell.cdk-column-content.mat-column-content.ng-star-inserted').invoke('text').then((text1) => {
+        expect(text1).to.be.eq('C_Todo_Item')
+    })
 })
 
 

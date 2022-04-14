@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 4,
-    "tests": 15,
+    "tests": 16,
     "passes": 11,
     "pending": 0,
-    "failures": 4,
-    "start": "2022-04-13T20:15:07.233Z",
-    "end": "2022-04-13T20:17:21.505Z",
-    "duration": 91594,
-    "testsRegistered": 15,
-    "passPercent": 73.33333333333333,
+    "failures": 5,
+    "start": "2022-04-14T08:21:58.696Z",
+    "end": "2022-04-14T08:24:21.194Z",
+    "duration": 104052,
+    "testsRegistered": 16,
+    "passPercent": 68.75,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2aeb4628-3c2e-432e-ad46-551e6e05dadc",
+      "uuid": "d75fcaf4-d80c-4c63-8c9e-4220a872bf9d",
       "title": "",
       "fullFile": "cypress/integration/ArchiveTodo.feature",
       "file": "cypress/integration/ArchiveTodo.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e621dd0e-cbae-4e5c-865c-0abb4a4a18d3",
+          "uuid": "6f39de2a-2478-4f42-8dac-ea3999a20e1d",
           "title": "Verify the Archive functionality on the application",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "Verify Todo item is removed from the list when Archive button is clicked",
               "fullTitle": "Verify the Archive functionality on the application Verify Todo item is removed from the list when Archive button is clicked",
               "timedOut": null,
-              "duration": 10493,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 10694,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
-              "err": {},
-              "uuid": "b2d59e21-1f70-49a1-8dd0-c8346931137c",
-              "parentUUID": "e621dd0e-cbae-4e5c-865c-0abb4a4a18d3",
+              "err": {
+                "message": "AssertionError: expected ' B_Todo_Item ' to equal 'C_Todo_Item'",
+                "estack": "AssertionError: expected ' B_Todo_Item ' to equal 'C_Todo_Item'\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/ArchiveTodo.feature:59:25)",
+                "diff": "- ' B_Todo_Item '\n+ 'C_Todo_Item'\n"
+              },
+              "uuid": "4010c7f4-7cbe-4975-bafa-a73cc32d975d",
+              "parentUUID": "6f39de2a-2478-4f42-8dac-ea3999a20e1d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "b2d59e21-1f70-49a1-8dd0-c8346931137c"
+          "passes": [],
+          "failures": [
+            "4010c7f4-7cbe-4975-bafa-a73cc32d975d"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10493,
+          "duration": 10694,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +80,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "069f09f6-0e76-47d8-a9e7-080898cd7b0c",
+      "uuid": "ee5e5392-d209-4e46-b69e-f2c9824ff2da",
       "title": "",
       "fullFile": "cypress/integration/CreateTodo.feature",
       "file": "cypress/integration/CreateTodo.feature",
@@ -85,7 +89,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+          "uuid": "2d493931-7086-4dd8-bac0-9fdf276f9716",
           "title": "Verify the Create Todo functionality",
           "fullFile": "",
           "file": "",
@@ -96,7 +100,7 @@
               "title": "Verify user is not allowed to create a Todo when Content field is epmty",
               "fullTitle": "Verify the Create Todo functionality Verify user is not allowed to create a Todo when Content field is epmty",
               "timedOut": null,
-              "duration": 1211,
+              "duration": 1102,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -105,8 +109,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "dcbcc19f-d775-4464-a005-56e5a93311ba",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "91e4ed45-9d3f-42ae-a7f0-7abe638ab239",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -114,7 +118,7 @@
               "title": "Verify that user is allowed to create a Todo when Content field has a single character",
               "fullTitle": "Verify the Create Todo functionality Verify that user is allowed to create a Todo when Content field has a single character",
               "timedOut": null,
-              "duration": 3044,
+              "duration": 3038,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -123,8 +127,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "4393c31f-fff7-496a-8409-206d12c30da0",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "9a9bad29-f4ef-45cd-b873-3943ad79d577",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -132,7 +136,7 @@
               "title": "Verify that the user is allowed to create a Todo when Content field has a valid value",
               "fullTitle": "Verify the Create Todo functionality Verify that the user is allowed to create a Todo when Content field has a valid value",
               "timedOut": null,
-              "duration": 3097,
+              "duration": 3095,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -141,8 +145,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "790cde26-ec5a-4622-9b77-20bc04f2291e",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "d291c8a1-d8cf-447c-9a63-9cf865842904",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -150,7 +154,7 @@
               "title": "Verify that the user is allowed to create a Todo when Content field has 100 character",
               "fullTitle": "Verify the Create Todo functionality Verify that the user is allowed to create a Todo when Content field has 100 character",
               "timedOut": null,
-              "duration": 4576,
+              "duration": 4296,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -159,8 +163,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "b289d2a4-ce03-485a-9efd-f9e841248eba",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "aaf66ec1-bd1f-4448-91b2-3a025ba4f425",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -168,7 +172,7 @@
               "title": "Verify that the user is not allowed to create a Todo when Content field has more than 100 character",
               "fullTitle": "Verify the Create Todo functionality Verify that the user is not allowed to create a Todo when Content field has more than 100 character",
               "timedOut": null,
-              "duration": 8465,
+              "duration": 8400,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -177,12 +181,12 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_11234567890!@£$%^&*()_+p~12[]:; 0<>,./Aqwertyuioplk1234567890!@£$%^&*()_+ ~12[]:;k,<>,./Aoinbg  Apr 13, 2022  Jul 11, 2022  more_vert'",
-                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_11234567890!@£$%^&*()_+p~12[]:; 0<>,./Aqwertyuioplk1234567890!@£$%^&*()_+ ~12[]:;k,<>,./Aoinbg  Apr 13, 2022  Jul 11, 2022  more_vert'\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:73:76)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10791:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10112:35)",
-                "diff": "- ' Todo_Item_11234567890!@£$%^&*()_+p~12[]:; 0<>,./Aqwertyuioplk1234567890!@£$%^&*()_+ ~12[]:;k,<>,./Aoinbg  Apr 13, 2022  Jul 11, 2022  more_vert'\n"
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_11234567890!@£$%^&*()_+p~12[]:; 0<>,./Aqwertyuioplk1234567890!@£$%^&*()_+ ~12[]:;k,<>,./Aoinbg  Apr 14, 2022  Jul 11, 2022  more_vert'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_11234567890!@£$%^&*()_+p~12[]:; 0<>,./Aqwertyuioplk1234567890!@£$%^&*()_+ ~12[]:;k,<>,./Aoinbg  Apr 14, 2022  Jul 11, 2022  more_vert'\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:73:76)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10794:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10115:35)",
+                "diff": "- ' Todo_Item_11234567890!@£$%^&*()_+p~12[]:; 0<>,./Aqwertyuioplk1234567890!@£$%^&*()_+ ~12[]:;k,<>,./Aoinbg  Apr 14, 2022  Jul 11, 2022  more_vert'\n"
               },
-              "uuid": "b500c14a-36ae-4a6b-a045-d2534f29e7c7",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "a5b220d6-be77-43e9-ae65-8c966408e32e",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -190,7 +194,7 @@
               "title": "Verify user is not allowed to create a Todo when Date field is epmty",
               "fullTitle": "Verify the Create Todo functionality Verify user is not allowed to create a Todo when Date field is epmty",
               "timedOut": null,
-              "duration": 6920,
+              "duration": 6842,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -199,12 +203,12 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_1  Apr 13, 2022  Apr 13, 2022  more_vert'",
-                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_1  Apr 13, 2022  Apr 13, 2022  more_vert'\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:73:76)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10791:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10112:35)",
-                "diff": "- ' Todo_Item_1  Apr 13, 2022  Apr 13, 2022  more_vert'\n"
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_1  Apr 14, 2022  Apr 14, 2022  more_vert'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_1  Apr 14, 2022  Apr 14, 2022  more_vert'\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:73:76)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10794:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10115:35)",
+                "diff": "- ' Todo_Item_1  Apr 14, 2022  Apr 14, 2022  more_vert'\n"
               },
-              "uuid": "e7f93754-d630-45e3-a419-6ae19a878341",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "6e29878a-cea6-45b6-8939-44ba0d4834e0",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -212,7 +216,7 @@
               "title": "Verify user is not allowed to create a Todo with Past date",
               "fullTitle": "Verify the Create Todo functionality Verify user is not allowed to create a Todo with Past date",
               "timedOut": null,
-              "duration": 782,
+              "duration": 7210,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -221,12 +225,12 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {
-                "message": "ReferenceError: pastDate is not defined",
-                "estack": "ReferenceError: pastDate is not defined\n    at TodoPage.enterDateValue (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:265:27)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:51:12)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10791:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10112:35)",
-                "diff": null
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_1  Apr 14, 2022  Apr 13, 2022  more_vert'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<tbody>' to have text '', but the text was ' Todo_Item_1  Apr 14, 2022  Apr 13, 2022  more_vert'\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:73:76)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10794:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10115:35)",
+                "diff": "- ' Todo_Item_1  Apr 14, 2022  Apr 13, 2022  more_vert'\n"
               },
-              "uuid": "09c3af22-ddd8-4fbd-b15a-0b4e966a0a94",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "62572b80-0af2-4ada-937e-e61e1cf2d0c1",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -234,7 +238,7 @@
               "title": "Verify user is  allowed to create a Todo with future date",
               "fullTitle": "Verify the Create Todo functionality Verify user is  allowed to create a Todo with future date",
               "timedOut": null,
-              "duration": 709,
+              "duration": 7274,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -243,12 +247,12 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {
-                "message": "ReferenceError: futureDate is not defined",
-                "estack": "ReferenceError: futureDate is not defined\n    at TodoPage.enterDateValue (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:267:27)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:51:12)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10791:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10112:35)",
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Todo_Item_1' within the element: <tbody> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Todo_Item_1' within the element: <tbody> but never did.\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:79:76)\n    at Context.resolveAndRunStepDefinition (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10794:29)\n    at Context.eval (http://nbs-todolist-interview-389909.s3-website.eu-west-2.amazonaws.com/__cypress/tests?p=cypress/integration/CreateTodo.feature:10115:35)",
                 "diff": null
               },
-              "uuid": "e46b545e-d306-45b0-8813-d77f3117ee86",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "f34fd75a-3ec4-4ed7-b722-59e51290c452",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             },
@@ -256,7 +260,7 @@
               "title": "Verify user is not allowed to create a Todo with inavlid date value",
               "fullTitle": "Verify the Create Todo functionality Verify user is not allowed to create a Todo with inavlid date value",
               "timedOut": null,
-              "duration": 3087,
+              "duration": 3075,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -265,29 +269,48 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "b866d00c-21ab-4b9b-a0c0-b322afd49523",
-              "parentUUID": "a59dc2c8-66fd-4ac0-96b1-cedf3c18fc58",
+              "uuid": "c02c8bd1-6aaf-47b7-982d-25a7a871c2c9",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Create Todo button is not avtive when the the form is invalid",
+              "fullTitle": "Verify the Create Todo functionality Verify Create Todo button is not avtive when the the form is invalid",
+              "timedOut": null,
+              "duration": 955,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "65dd3066-c4bc-41ad-9aa5-feebef06dac7",
+              "parentUUID": "2d493931-7086-4dd8-bac0-9fdf276f9716",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dcbcc19f-d775-4464-a005-56e5a93311ba",
-            "4393c31f-fff7-496a-8409-206d12c30da0",
-            "790cde26-ec5a-4622-9b77-20bc04f2291e",
-            "b289d2a4-ce03-485a-9efd-f9e841248eba",
-            "b866d00c-21ab-4b9b-a0c0-b322afd49523"
+            "91e4ed45-9d3f-42ae-a7f0-7abe638ab239",
+            "9a9bad29-f4ef-45cd-b873-3943ad79d577",
+            "d291c8a1-d8cf-447c-9a63-9cf865842904",
+            "aaf66ec1-bd1f-4448-91b2-3a025ba4f425",
+            "c02c8bd1-6aaf-47b7-982d-25a7a871c2c9",
+            "65dd3066-c4bc-41ad-9aa5-feebef06dac7"
           ],
           "failures": [
-            "b500c14a-36ae-4a6b-a045-d2534f29e7c7",
-            "e7f93754-d630-45e3-a419-6ae19a878341",
-            "09c3af22-ddd8-4fbd-b15a-0b4e966a0a94",
-            "e46b545e-d306-45b0-8813-d77f3117ee86"
+            "a5b220d6-be77-43e9-ae65-8c966408e32e",
+            "6e29878a-cea6-45b6-8939-44ba0d4834e0",
+            "62572b80-0af2-4ada-937e-e61e1cf2d0c1",
+            "f34fd75a-3ec4-4ed7-b722-59e51290c452"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 31891,
+          "duration": 45287,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -303,7 +326,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "000dc8fd-126a-4ec1-8b59-df7ed12f3719",
+      "uuid": "609ca896-37f7-4d10-b5b4-014984391584",
       "title": "",
       "fullFile": "cypress/integration/DeleteTodo.feature",
       "file": "cypress/integration/DeleteTodo.feature",
@@ -312,7 +335,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b0bdc830-dffe-4314-a93a-ca8f534314b2",
+          "uuid": "bdf64bc6-7b3e-4c3a-8a9f-246605b51f67",
           "title": "Verify the Delete functionality on the application",
           "fullFile": "",
           "file": "",
@@ -323,25 +346,7 @@
               "title": "Verify Todo item is deleted from the list when Delete button is clicked",
               "fullTitle": "Verify the Delete functionality on the application Verify Todo item is deleted from the list when Delete button is clicked",
               "timedOut": null,
-              "duration": 9993,
-              "state": "passed",
-              "speed": "medium",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
-              "err": {},
-              "uuid": "d4036bce-afd6-4b88-b665-c8150d654c15",
-              "parentUUID": "b0bdc830-dffe-4314-a93a-ca8f534314b2",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify Todo item is removed from the persisted memory after delete action",
-              "fullTitle": "Verify the Delete functionality on the application Verify Todo item is removed from the persisted memory after delete action",
-              "timedOut": null,
-              "duration": 10067,
+              "duration": 10178,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -350,8 +355,8 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "69f0381a-e158-438d-a331-4c5e0ea25c6b",
-              "parentUUID": "b0bdc830-dffe-4314-a93a-ca8f534314b2",
+              "uuid": "ba0de716-07f9-4626-89d9-33126ef1b06e",
+              "parentUUID": "bdf64bc6-7b3e-4c3a-8a9f-246605b51f67",
               "isHook": false,
               "skipped": false
             },
@@ -359,7 +364,7 @@
               "title": "Verify Todo item is removed from the persisted memory after delete action",
               "fullTitle": "Verify the Delete functionality on the application Verify Todo item is removed from the persisted memory after delete action",
               "timedOut": null,
-              "duration": 9490,
+              "duration": 9862,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -368,22 +373,40 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "73e0e600-fc3f-46ce-88b2-a4059145efa7",
-              "parentUUID": "b0bdc830-dffe-4314-a93a-ca8f534314b2",
+              "uuid": "57150b4c-83ff-4e33-9bba-38269a1cf8c5",
+              "parentUUID": "bdf64bc6-7b3e-4c3a-8a9f-246605b51f67",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Todo item is removed from the persisted memory after delete action",
+              "fullTitle": "Verify the Delete functionality on the application Verify Todo item is removed from the persisted memory after delete action",
+              "timedOut": null,
+              "duration": 9348,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "bb48a879-7600-48d3-be7f-478400214593",
+              "parentUUID": "bdf64bc6-7b3e-4c3a-8a9f-246605b51f67",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d4036bce-afd6-4b88-b665-c8150d654c15",
-            "69f0381a-e158-438d-a331-4c5e0ea25c6b",
-            "73e0e600-fc3f-46ce-88b2-a4059145efa7"
+            "ba0de716-07f9-4626-89d9-33126ef1b06e",
+            "57150b4c-83ff-4e33-9bba-38269a1cf8c5",
+            "bb48a879-7600-48d3-be7f-478400214593"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 29550,
+          "duration": 29388,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -399,7 +422,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "bf1b46da-b269-4bab-ad26-7ff9b6221481",
+      "uuid": "eef0e558-f601-4c83-9b10-346deb2b2346",
       "title": "",
       "fullFile": "cypress/integration/TodoListScenarios.feature",
       "file": "cypress/integration/TodoListScenarios.feature",
@@ -408,7 +431,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9c5dda9a-e420-4872-9c88-4bcca9147fcc",
+          "uuid": "7878cad7-7764-407c-8a54-137645bbac35",
           "title": "Verify the Todo List functionality on the application",
           "fullFile": "",
           "file": "",
@@ -419,25 +442,7 @@
               "title": "Verify list of Todos is ordered by Due date ascending",
               "fullTitle": "Verify the Todo List functionality on the application Verify list of Todos is ordered by Due date ascending",
               "timedOut": null,
-              "duration": 10655,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
-              "err": {},
-              "uuid": "09135eed-ccbc-4f38-9f71-f32db118e722",
-              "parentUUID": "9c5dda9a-e420-4872-9c88-4bcca9147fcc",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify list of Todos is ordered alphabetically by content values when Due dates are same",
-              "fullTitle": "Verify the Todo List functionality on the application Verify list of Todos is ordered alphabetically by content values when Due dates are same",
-              "timedOut": null,
-              "duration": 9005,
+              "duration": 9806,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -446,21 +451,39 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "f418e77c-826c-4432-b1d5-4efaf1856e20",
-              "parentUUID": "9c5dda9a-e420-4872-9c88-4bcca9147fcc",
+              "uuid": "6ba719d8-bc6e-4fbf-972d-4c2c2007f734",
+              "parentUUID": "7878cad7-7764-407c-8a54-137645bbac35",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify list of Todos is ordered alphabetically by content values when Due dates are same",
+              "fullTitle": "Verify the Todo List functionality on the application Verify list of Todos is ordered alphabetically by content values when Due dates are same",
+              "timedOut": null,
+              "duration": 8877,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "5f7b6463-ca38-4352-bd61-165aef139620",
+              "parentUUID": "7878cad7-7764-407c-8a54-137645bbac35",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "09135eed-ccbc-4f38-9f71-f32db118e722",
-            "f418e77c-826c-4432-b1d5-4efaf1856e20"
+            "6ba719d8-bc6e-4fbf-972d-4c2c2007f734",
+            "5f7b6463-ca38-4352-bd61-165aef139620"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19660,
+          "duration": 18683,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
