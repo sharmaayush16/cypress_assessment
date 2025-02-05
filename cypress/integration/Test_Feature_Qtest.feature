@@ -1,5 +1,5 @@
 Feature: Test Feature Qtest
-  This faeture file ius created to test Qtest integration with Jira
+  This faeture file is created to test Qtest integration with Jira
 
   Scenario: Tets Scenario 1
     Given Test step 1
